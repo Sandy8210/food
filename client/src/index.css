@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  font-family: "Ubuntu", sans-serif;
+  --font-family: "Lora", serif;
+
+  --primary-light-color: #ff9800;
+  --background-light-color: #f5f5f5;
+  --text-light-color: #212121;
+  --box-light-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  --light-bg-glass-effect: rgba(0, 0, 0, 0.1);
+
+  --primary-dark-color: #ff5722;
+  --background-dark-color: #121212;
+  --text-dark-color: #e0e0e0;
+  --box-dark-shadow: 0px 5px 15px rgba(255, 255, 255, 0.5);
+  --dark-bg-glass-effect: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] {
+  --background-color: var(--background-dark-color);
+  --primary-color: var(--primary-dark-color);
+  --text-color: var(--text-dark-color);
+  --box-shadow: var(--box-dark-shadow);
+  --glass-effect: var(--dark-bg-glass-effect);
+}
+
+[data-theme="light"] {
+  --background-color: var(--background-light-color);
+  --primary-color: var(--primary-light-color);
+  --text-color: var(--text-light-color);
+  --box-shadow: var(--box-light-shadow);
+  --glass-effect: var(--light-bg-glass-effect);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}

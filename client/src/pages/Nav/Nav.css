@@ -1,0 +1,140 @@
+.nav-container {
+  z-index: 6;
+  width: 100%;
+  display: flex;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease;
+  align-items: center;
+}
+
+.nav-container.sticky {
+  box-shadow: var(--box-shadow);
+}
+
+.logo-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo h2 {
+  color: var(--primary-color);
+}
+
+.nav-data {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.nav-data .nav-link {
+  margin-left: 2rem;
+  position: relative;
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-color);
+  left: 0;
+  bottom: -4px;
+  transition: all 0.5s ease-in;
+}
+
+.user-theme {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-theme .icon {
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-theme .theme,
+.user-theme .fav,
+.user-theme .cart {
+  cursor: pointer;
+  padding: 0.5rem;
+  border: 1px solid;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.user-theme .theme:hover,
+.user-theme .fav:hover,
+.user-theme .cart:hover {
+  color: var(--primary-color);
+  background-color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+.user-theme .credential-btn {
+  margin: 0 2rem;
+}
+
+.mobile-menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .nav-container {
+    position: relative;
+  }
+  .logo h2 {
+    font-size: 2rem;
+    margin: 1rem 2rem;
+    padding: 0 2rem;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    position: absolute;
+    left: 10px;
+  }
+
+  .nav-data {
+    display: flex;
+    flex-direction: column;
+    left: -200%;
+    position: fixed;
+    transition: all 0.5s ease-in-out;
+    margin: 0;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    text-align: left;
+    align-items: center;
+  }
+
+  .nav-data .nav-link {
+    margin: 1rem 0;
+    margin-top: 5rem;
+  }
+
+  .nav-data.show {
+    left: 0;
+    backdrop-filter: blur(10px);
+    background: var(--glass-effect);
+    width: 300px;
+    height: 100%;
+    text-align: left;
+  }
+}
